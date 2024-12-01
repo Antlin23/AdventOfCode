@@ -5,18 +5,18 @@ List<int> list2 = new List<int>();
 StringSplitOptions options = StringSplitOptions.RemoveEmptyEntries;
 
 //splits puzzleInput at each new space, making pairs
-String[] puzzleInputArrayed = puzzleInput.Split("\r\n");
+string[] puzzleInputArrayed = puzzleInput.Split("\r\n");
 
 for (int i = 0; i < puzzleInputArrayed.Length; i++)
 {
     //splits each pair in two
-    String[] pArrayed = puzzleInputArrayed[i].Split(' ', options);
+    string[] pArrayed = puzzleInputArrayed[i].Split(' ', options);
 
     //adds first string to list1 and second to list2 lists
     for (int j = 0; j < pArrayed.Length - 1; j++)
     {
-        list1.Add(Int32.Parse(pArrayed[j]));
-        list2.Add(Int32.Parse(pArrayed[j + 1]));
+        list1.Add(int.Parse(pArrayed[j]));
+        list2.Add(int.Parse(pArrayed[j + 1]));
     }
 }
 
