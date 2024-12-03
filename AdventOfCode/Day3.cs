@@ -15,22 +15,54 @@ namespace AdventOfCode {
 
             var m = Regex.Matches(corruptedData, regex);
 
+            var total = MultiplyingNumbers(m);
+
+            Console.WriteLine("Part 1: " + total);
+            //answer: 189600467
+
+
+            //part two
+            string dontRegex = "don't\\(\\)";
+            //removes the last dont() manually
+            corruptedData = corruptedData.Replace("don't()~:+@how()select()what()%$mul(389,212);;what()%[how()mul(210,340):how()'-mul(80,124)&-how()>(~>^why()}mul(240,258)+why()&%mul(579,916)!(]((select(112,996)#($,mul(584,139)%", "");
+
+            while (true)
+            {
+                var dontInData = Regex.Matches(corruptedData, dontRegex);
+
+                if(dontInData.Count == 0) { break; }
+
+                var partToRemove = corruptedData.Split("don't()", 2)[1];
+
+                partToRemove = partToRemove.Split("do()")[0];
+
+                if(partToRemove != "")
+                    corruptedData = corruptedData.Replace("don't()" + partToRemove + "do()", "");
+            }
+
+            m = Regex.Matches(corruptedData, regex);
+
+            total = MultiplyingNumbers(m);
+
+            Console.WriteLine("Part 2: " + total);
+        }
+
+        public static int MultiplyingNumbers(MatchCollection m)
+        {
             var total = 0;
-
-            for (int i = 0; i < m.Count; i++) {
-
+            for (int i = 0; i < m.Count; i++)
+            {
                 var firstSequence = m[i].ToString().Split(",")[0];
 
                 var firstNumber = firstSequence.Split("(")[1];
-                
+
                 var secondSequence = m[i].ToString().Split(",")[1];
 
                 var secondNumber = secondSequence.Split(")")[0];
 
                 total = total + (int.Parse(firstNumber) * int.Parse(secondNumber));
-
             }
-            Console.WriteLine(total);
+            return total;
         }
     }
 }

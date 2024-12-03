@@ -21,19 +21,6 @@
           "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Skrivbord\\programming\\adventofcode\\AdventOfCode\\AdventOfCode\\Program.cs",
-              "RelativeDocumentMoniker": "AdventOfCode\\Program.cs",
-              "ToolTip": "C:\\Users\\anton\\OneDrive\\Skrivbord\\programming\\adventofcode\\AdventOfCode\\AdventOfCode\\Program.cs",
-              "RelativeToolTip": "AdventOfCode\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T09:16:31.855Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
@@ -43,13 +30,25 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Skrivbord\\programming\\adventofcode\\AdventOfCode\\AdventOfCode\\Program.cs",
+              "RelativeDocumentMoniker": "AdventOfCode\\Program.cs",
+              "ToolTip": "C:\\Users\\anton\\OneDrive\\Skrivbord\\programming\\adventofcode\\AdventOfCode\\AdventOfCode\\Program.cs",
+              "RelativeToolTip": "AdventOfCode\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T09:16:31.855Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Day3.cs",
               "DocumentMoniker": "C:\\Users\\anton\\OneDrive\\Skrivbord\\programming\\adventofcode\\AdventOfCode\\AdventOfCode\\Day3.cs",
               "RelativeDocumentMoniker": "AdventOfCode\\Day3.cs",
               "ToolTip": "C:\\Users\\anton\\OneDrive\\Skrivbord\\programming\\adventofcode\\AdventOfCode\\AdventOfCode\\Day3.cs",
               "RelativeToolTip": "AdventOfCode\\Day3.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAABTAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T09:16:29Z",
               "EditorCaption": ""
