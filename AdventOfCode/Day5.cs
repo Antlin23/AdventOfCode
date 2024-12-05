@@ -45,17 +45,6 @@ namespace AdventOfCode {
                 }
             }
 
-            var part1FinalSummary = 0;
-            for (int i = 0; i < correctPart2LinesList.Count; i++) { 
-                var correctPart2LineArrayed = correctPart2LinesList[i].Split(",");
-
-                var middleNumberIndex = correctPart2LineArrayed.Count() / 2;
-
-                var correctPart2LineMiddleNumber = correctPart2LineArrayed[middleNumberIndex];
-
-                part1FinalSummary += int.Parse(correctPart2LineMiddleNumber);
-            }
-
             //Part 2 ------------
             List<string> recorrectPart2LinesList = new List<string>();
             while (incorrectPart2LinesList.Count > 0) {
@@ -100,21 +89,26 @@ namespace AdventOfCode {
                     }
                 }
             }
-            
-            var part2FinalSummary = 0;
-            for (int i = 0; i < recorrectPart2LinesList.Count; i++)
-            {
-                Console.WriteLine("Final: " + recorrectPart2LinesList[i]);
 
-                var correctPart2LineArrayed = recorrectPart2LinesList[i].Split(",");
+            CountFinalValue(recorrectPart2LinesList);
+            
+        }
+        public static void CountFinalValue(List<string> correctPart2Lines)
+        {
+            var totalValue = 0;
+            for (int i = 0; i < correctPart2Lines.Count; i++)
+            {
+                Console.WriteLine("Final: " + correctPart2Lines[i]);
+
+                var correctPart2LineArrayed = correctPart2Lines[i].Split(",");
 
                 var middleNumberIndex = correctPart2LineArrayed.Count() / 2;
 
-                var correctPart2LineMiddleNumber = correctPart2LineArrayed[middleNumberIndex];
+                var correctPart2LineArrayedMiddleNumber = correctPart2LineArrayed[middleNumberIndex];
 
-                part2FinalSummary += int.Parse(correctPart2LineMiddleNumber);
+                totalValue += int.Parse(correctPart2LineArrayedMiddleNumber);
             }
-            Console.WriteLine(part2FinalSummary);
+            Console.WriteLine(totalValue);
         }
     }
 }
