@@ -1,0 +1,4 @@
+// Validating benchmarks:
+// Benchmark Day6.Start: DefaultJob [puzzleInput=dfg]
+//    * Benchmarked method `Start` is static. Benchmarks MUST be instance methods, static methods are not supported.
+

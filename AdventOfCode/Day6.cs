@@ -44,11 +44,6 @@ namespace AdventOfCode {
                 if (IsGuardInsideMap(lines))
                     lines = MoveGuardToTheLeft(lines, guardsLine, guardsXPosition);
                 else break;
-                foreach (var line in lines)
-                {
-                    Console.WriteLine(line);
-                }
-                Console.WriteLine();
             }
             foreach (var line in lines)
             {
@@ -58,7 +53,6 @@ namespace AdventOfCode {
             Console.WriteLine(CountGuardPositions(lines));
             //anwser part 1: 4454
         }
-
         public static int CountGuardPositions(string[] lines)
         {
             var linesMadeTogether = "";
