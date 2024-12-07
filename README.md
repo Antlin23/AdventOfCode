@@ -1,3 +1,3 @@
 My solutions for adventofcode.com coding problems. 
 
-All problem descritions can be found at adventofcode.com.
+All problem descriptions can be found at adventofcode.com.
