@@ -8,6 +8,6 @@ Intel Core i5-10400F CPU 2.90GHz, 1 CPU, 12 logical and 6 physical cores
 
 
 ```
-| Method      | Mean     | Error    | StdDev   |
-|------------ |---------:|---------:|---------:|
-| MyBenchmark | 12.26 ms | 0.242 ms | 0.581 ms |
+| Method | Mean     | Error    | StdDev   |
+|------- |---------:|---------:|---------:|
+| Start  | 40.09 ms | 0.780 ms | 1.167 ms |
