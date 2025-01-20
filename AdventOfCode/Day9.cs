@@ -19,65 +19,87 @@ namespace AdventOfCode { //day 9 completed with example puzzle, not the real
 
             Console.WriteLine("checksum: " + checksum);
         }
-        //419901479 too low
+        //1859249580 too low
+
+        //Calculates the sum from the final string
         public static int CalculateChecksum(string puzzle) {
             var sum = 0;
+            Console.WriteLine("At checksum function " + puzzle);
             for (int i = 0; i < puzzle.Length; i++)
             {
                 string c = puzzle[i].ToString();
 
-                sum += int.Parse(c) * i;
+                if(c != " ")
+                    sum += int.Parse(c) * i;
             }
             return sum;
         }
 
+
+
+        
+        //Puts all the . on one side and the numbers on the other
         public static string ThirdStep(string puzzle)
         {
-            var input = puzzle;
-            Console.WriteLine(input);
+            char[] puzzleChars = puzzle.ToCharArray();
+
+            List<char> charList = new List<char>(puzzleChars);
+
+            Console.WriteLine("third: " + string.Join("", charList));
+            //removes empty chars
+            for (var j = 0; j < charList.Count; j++)
+            {
+                if (charList[j] == ' ')
+                {
+                    charList.RemoveAt(j);
+                    j--;
+                }
+            }
+            puzzleChars = charList.ToArray();
+
             Regex regex = new Regex(@"\.\d");
 
-            var i = 0;
 
-            var inputBuilder = new StringBuilder(input);
-
-            for (i = inputBuilder.Length - 1; i > 0; i--)
+            for (var i = puzzleChars.Count() - 1; i > 0; i--)
             {
-                if (!regex.IsMatch(inputBuilder.ToString()))
+                var tempString = string.Join("", puzzleChars);
+
+                if (!regex.IsMatch(tempString))
                     break;
 
-                char c = inputBuilder[i];
+                char c = puzzleChars[i];
 
-                var index = inputBuilder.ToString().IndexOf(".");
+                int index = Array.IndexOf(puzzleChars, '.');
+                Console.WriteLine(index);
 
-                inputBuilder[index] = c;
-                inputBuilder[i] = '.';
-
-                ////replace . with char
-                //input = input.Remove(index, 1);
-                //input = input.Insert(index, c);
-                ////replace char with .
-                //input = input.Remove(i, 1);
-                //input = input.Insert(i, ".");
+                puzzleChars[index] = c;
+                puzzleChars[i] = '.';
             }
-            input = inputBuilder.ToString();
 
-            Console.WriteLine();
-            //length 221659
-            Console.WriteLine("length: " + i);
-            Console.WriteLine();
-            Console.WriteLine(input);
-            string firstPartOfInput = input.Split(".", 2)[0];
 
-            return firstPartOfInput;
+
+            charList = puzzleChars.ToList();
+            //removes all .
+            for (var j = 0; j < charList.Count; j++)
+            {
+                if (charList[j] == '.')
+                {
+                    charList.RemoveAt(j);
+                    j--;
+                }
+            }
+            return string.Join("", charList);
         }
 
+        //check what to do if value is 0
+
+        //Changes the numbers to right amount of IndexNumber 
         public static string SecondStep(string puzzle)
         {
             var input = puzzle;
+
             var indexPosition = 0;
 
-            //input = input.Replace("0", "");
             for (int i = 0; i < input.Length; i++)
             {
                 char c = input[i];
@@ -90,11 +112,11 @@ namespace AdventOfCode { //day 9 completed with example puzzle, not the real
                             input = input.Remove(i, 1);
 
                         input = input.Insert(i, indexPosition.ToString() + " ");
-                        i++;
+                        //i++;
 
                         if (indexPosition < 10)
                         {
-                            i++;
+                            i += 1;
                         }
                         else if (indexPosition < 100)
                         {
@@ -118,6 +140,10 @@ namespace AdventOfCode { //day 9 completed with example puzzle, not the real
             }
             return input;
         }
+
+
+
+        //Changes each other character to .
         public static string FirstStep(string puzzle) {
             var input = puzzle;
             for (int i = input.Length - 2; i > 0; i = i - 2) {
