@@ -57,7 +57,7 @@ namespace AdventOfCode {
 
             if (map.Count() - 1 > mark.yPos)
             {
-                if (map[mark.yPos + 1][mark.xPos] == (mark.value + 1))
+                if (map[mark.yPos + 1][mark.xPos].ToString() == (mark.value + 1).ToString())
                 {
                     Mark newMark = new Mark
                     {
@@ -71,7 +71,7 @@ namespace AdventOfCode {
 
             if (mark.xPos > 0)
             {
-                if (map[mark.yPos][mark.xPos - 1] == (mark.value + 1))
+                if (map[mark.yPos][mark.xPos - 1].ToString() == (mark.value + 1).ToString())
                 {
                     Mark newMark = new Mark
                     {
@@ -85,7 +85,7 @@ namespace AdventOfCode {
 
             if (mark.yPos > 0)
             {
-                if (map[mark.yPos - 1][mark.xPos] == (mark.value + 1))
+                if (map[mark.yPos - 1][mark.xPos].ToString() == (mark.value + 1).ToString())
                 {
                     Mark newMark = new Mark
                     {
