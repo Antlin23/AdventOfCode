@@ -74,6 +74,9 @@ namespace AdventOfCode {
 
                                                         for (int ns9 = 0; ns9 < nextSteps9.Count(); ns9++)
                                                         {
+
+                                                            //Part 1
+                                                            /*
                                                             if (!scorePositions.Any(x => x.yPos == nextSteps9[ns9].yPos && x.xPos == nextSteps9[ns9].xPos && x.value == trailHeadIndex))
                                                             {
                                                                 trailHead++;
@@ -81,6 +84,13 @@ namespace AdventOfCode {
                                                                 nextSteps9[ns9].value = trailHeadIndex;
                                                                 scorePositions.Add(nextSteps9[ns9]);
                                                             }
+                                                            */
+
+                                                            //Part 2
+                                                            trailHead++;
+
+                                                            nextSteps9[ns9].value = trailHeadIndex;
+                                                            scorePositions.Add(nextSteps9[ns9]);
                                                         }
                                                     }
                                                 }
